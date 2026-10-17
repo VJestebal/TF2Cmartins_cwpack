@@ -1,0 +1,24 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\buildables\sentry1\hose_ao_blue"
+	"$cloakPassEnabled" "1"
+	"$phong" "1"
+	"$phongboost" "5"
+	"$phongexponent" "25"
+	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
+	"$phongfresnelranges"  "[.25 .5 1]"
+  
+	"$selfillum" "1"
+
+	"$rimlight" "1"    
+	"$rimlightexponent" "4"        
+	"$rimlightboost" "1.5"
+	"$translucent" 0
+
+	"Proxies"
+	{
+		"building_invis"
+		{
+		}
+	}
+}

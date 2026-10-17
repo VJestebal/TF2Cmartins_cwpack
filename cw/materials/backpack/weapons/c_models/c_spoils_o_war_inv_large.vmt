@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$baseTexture"	 "backpack/weapons/c_models/c_spoils_o_war_inv_large"
+	"$translucent"	"1"
+}

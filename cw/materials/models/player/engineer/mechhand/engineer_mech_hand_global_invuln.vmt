@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\player\shared\invuln_global.vmt"
+
+	insert
+	{
+		"$basetexture" "models/player/engineer/global/engineer_mech_hand_global"
+	}
+}

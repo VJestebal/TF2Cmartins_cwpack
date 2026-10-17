@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\player\shared\invuln_green.vmt"
+
+	insert
+	{
+		"$basetexture" "models/player/engineer/green/engineer_mech_hand_green"
+	}
+}

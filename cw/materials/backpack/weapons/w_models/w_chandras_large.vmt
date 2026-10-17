@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/w_models/w_chandras_large"
+	"$translucent" 1
+}

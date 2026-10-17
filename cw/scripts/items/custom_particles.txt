@@ -1,0 +1,9 @@
+particles_manifest
+{
+	"file"  	"!particles/nowp_wpnfx.pcf"
+	"file"  	"!particles/nowp_drg_cm5k.pcf"
+	"file"  	"!particles/drg_implosions.pcf"
+	"file"  	"!particles/small_explosion2.pcf"
+	"file"  	"!particles/blank_effect2.pcf"
+	"file"  	"!particles/drg_engineer.pcf"
+}

@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/c_models/c_eyepander/c_eyepander_large"
+	"$translucent" 1
+}

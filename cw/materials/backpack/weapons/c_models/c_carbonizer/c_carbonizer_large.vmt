@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/c_models/c_carbonizer/c_carbonizer_large"
+	"$translucent" 1
+}

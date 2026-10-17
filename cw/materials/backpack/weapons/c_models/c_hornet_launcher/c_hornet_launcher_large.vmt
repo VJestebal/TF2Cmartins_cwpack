@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/c_models/c_hornet_launcher/c_hornet_launcher_large"
+	"$translucent" 1
+}

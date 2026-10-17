@@ -1,0 +1,43 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models\weapons\treasurehorn/horn"
+
+	"$bumpmap""models\effects\flat_normal"
+	
+	"$phong" "1"
+	"$phongexponent" "4"
+	"$phongboost" "0.4"	
+	"$phongfresnelranges" "[1 .5 3]"
+	"$halflambert" "1"
+	
+	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"	
+	"$rimlightboost" "1"
+
+//	"$glowcolor" "1"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"Proxies"
+	{
+		"weapon_invis"
+		{
+		}
+		"ModelGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+	}
+}

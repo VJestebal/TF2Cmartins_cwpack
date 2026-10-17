@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$baseTexture"	 "backpack/weapons/c_models/c_raygun_spy_large"
+	"$translucent"	"1"
+}

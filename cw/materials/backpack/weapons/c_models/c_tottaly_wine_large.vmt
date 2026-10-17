@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$baseTexture"	 "backpack/weapons/c_models/c_tottaly_wine_large"
+	"$translucent"	"1"
+}

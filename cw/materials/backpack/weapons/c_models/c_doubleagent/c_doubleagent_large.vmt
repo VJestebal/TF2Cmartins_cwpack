@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/c_models/c_doubleagent/c_doubleagent_large"
+	"$translucent" 1
+}

@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "backpack/weapons/v_models/v_berserk_large"
+	"$translucent" 1
+}

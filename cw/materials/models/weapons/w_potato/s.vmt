@@ -1,0 +1,7 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models\weapons\w_potato\s"
+	"$bumpmap" "models\weapons\w_potato\s_norm"
+
+}
+

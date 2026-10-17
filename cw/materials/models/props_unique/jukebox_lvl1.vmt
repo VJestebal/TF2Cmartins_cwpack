@@ -1,0 +1,8 @@
+VertexLitGeneric
+{
+$basetexture "Models/props_unique/jukebox_lvl1"
+$surfaceprop default
+$selfillum 1
+$envmap env_cubemap
+$envmapmask "Models/props_unique/jukebox_envmap_lvl1"
+}
