@@ -12,7 +12,6 @@ PrecacheModel("models/player/gunslingerfix/engineer.mdl")
             {
                 if (wearable.GetClassname() != "tf_wearable_demoshield")
                     continue
-                printl(wearable)
                 spawnedplayer.SetCustomModelWithClassAnimations("models/player/demoshieldfix/demo.mdl")
             }
     }
@@ -27,7 +26,6 @@ PrecacheModel("models/player/gunslingerfix/engineer.mdl")
             {
                 if (wearable.GetClassname() != "tf_weapon_robot_arm")
                     continue
-                printl(wearable)
                 spawnedplayer.SetCustomModelWithClassAnimations("models/player/gunslingerfix/engineer.mdl")
             }
     }

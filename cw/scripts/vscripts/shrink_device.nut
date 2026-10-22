@@ -13,7 +13,7 @@ PrecacheSound("entities/mini_mushroom.mp3")
         local weapon = player.GetActiveWeapon()
         if (!weapon){return}
         if (weapon.GetAttribute("shrink device desc", 33.33) != 1){return}
-        player.SetModelScale(0.25,0.5)
+        player.SetModelScale(0.35,0.5)
         player.AddCustomAttribute("voice pitch scale",1.5,25)
 		player.AddCondEx(41,25,player)
 		for (local wearable = player.FirstMoveChild(); wearable != null; wearable = wearable.NextMovePeer())
@@ -63,7 +63,6 @@ PrecacheSound("entities/mini_mushroom.mp3")
                 if (wearable.GetAttribute("shrink device desc",33.33) != 1){continue}
                 is_shrinkdevice_present = true
                 break
-
             }
 
         if(is_shrinkdevice_present){

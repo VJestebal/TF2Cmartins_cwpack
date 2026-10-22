@@ -11,14 +11,12 @@ PrecacheModel("models/buildables/sapper_sentry/sapper_placed.mdl")
         local weaponstr = params.weapon
 
         if (weaponstr != null){
-            printl("Weapon used: " + weaponstr)
             if (weaponstr == "weapon_sentry_sapper"){
                 printl("special sapper detected")
             }else{return}
         }else{return}
 
         if (attacker != null){
-            printl("Destroyed by: " + attacker.GetPlayerName())
         }else{return}
 
         local objectName = "Unknown"
@@ -31,14 +29,12 @@ PrecacheModel("models/buildables/sapper_sentry/sapper_placed.mdl")
             case 3: objectName = "Sentry"; break
         }
 
-        printl(objectName + " destroyed")
 
         local ent = EntIndexToHScript(params.index)
 
         if (ent != null)
         {
             local pos = ent.GetOrigin()
-            printl("Building destroyed at: " + pos)
             local sentry = SpawnEntityFromTable("obj_sentrygun", {origin = pos})
             if (sentry != null){
                 sentry.SetTeam(attacker.GetTeam())

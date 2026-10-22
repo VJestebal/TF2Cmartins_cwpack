@@ -7,18 +7,12 @@ printl("Script started tp spy gun")
         local victim = EntIndexToHScript(params.victim);
         local weaponindex = params.weapon_def_index;
 
-        printl(attacker);
-        printl(attacker.GetLocalOrigin());
-                printl(params.attacker);
-
-
         if (!victim || !attacker)
             return;
 
         if (weaponindex != 20232)
             return;
 
-        printl("siuuuu");
 
         // Guardar posiciones
         local victimPos = victim.GetLocalOrigin(); 

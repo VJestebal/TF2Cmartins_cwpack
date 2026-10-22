@@ -1021,6 +1021,7 @@ Source: https://gamebanana.com/mods/640364"
 				"hidden separator"				"1"
 				"rocket gravity"				"1.05"
 				"Reload time decreased" "0.9"
+				"self dmg push force decreased" "0.7"
 			}			
 
 			"image_inventory"		"backpack/weapons/w_models/w_grenDM"
@@ -1569,7 +1570,7 @@ Source: https://gamebanana.com/mods/640364"
 			"item_logname"				"anchor"
 			"item_iconname"				"anchor"
 
-			"image_inventory"		"backpack/weapons/w_models/w_anchor"
+			"image_inventory"		"vgui/loadout/weapons/admiralty_anchor"
 			"mouse_pressed_sound"	"ui/item_thick_metal_pickup.wav"
 			"drop_sound"			"ui/item_thick_metal_drop.wav"
 		}
@@ -1805,16 +1806,10 @@ Weapon by: 'The One Of Wonders'"
 					"attribute_class"	"mult_dmg"
 					"value"	"0.75"
 				}
-				"fire rate penalty"
+				"headshot is minicrit"
 				{
-					"attribute_class"	"mult_postfiredelay"
-					"value"	"1.6"
-				}
-				"hidden separator" "1"
-				"scoped firerate penalty"
-				{
-					"attribute_class"	"mult_postfiredelay_scoped"
-					"value"	"1.6"
+					"attribute_class"	"headshot_is_minicrit"
+					"value"				"1"
 				}
 				
 			}
@@ -2147,17 +2142,17 @@ Source: https://gamebanana.com/mods/199979"
 				"bullets per shot bonus"
 				{
 					"attribute_class"	"mult_bullets_per_shot"
-					"value" "1.3"
+					"value" "1.5"
 				}
-				"damage bonus"
+				"damage penalty"
 				{
 					"attribute_class"	"mult_dmg"
-					"value" "1.15"
+					"value" "0.9"
 				}
 				"clip size penalty"
 				{
 					"attribute_class"	"mult_clipsize"
-					"value" "0.15"
+					"value" "0.16"
 				}
 				"disable fancy class select anim"
 				{
@@ -2173,7 +2168,7 @@ Source: https://gamebanana.com/mods/199979"
 				"apply self knockback"
 				{
 					"attribute_class"	"apply_self_knockback"
-					"value"	"450"
+					"value"	"300"
 				}
 
 			}
@@ -2649,7 +2644,7 @@ Source: https://gamebanana.com/mods/364420"
 				"maxammo secondary reduced"
 				{
 					"attribute_class" "mult_maxammo_secondary"
-					"value" "0.2"
+					"value" "0.0"
 				}
 				"custom lunchbox throwable model"
 				{
@@ -3843,11 +3838,6 @@ Source: https://gamebanana.com/mods/604473"
 					"value" "1.75"
 				}
 				"hidden separator"	"1"
-				"self dmg push force increased"
-				{
-					"item_class"		"mult_dmgself_push_force"
-					"value"				"2.5"
-				}
 				"override projectile type"
 				{
 					"item_class"		"override_projectile_type"
@@ -3871,7 +3861,7 @@ Source: https://gamebanana.com/mods/604473"
 				"mod ammo per shot"
 				{
 					"attribute_class"	"mod_ammo_per_shot"
-					"value" "5"
+					"value" "4"
 				}
 				"Projectile speed increased"
 				{
@@ -6914,6 +6904,7 @@ Source: https://gamebanana.com/mods/667432"
 			"attributes"
 			{
                 "mrjarate" {"value" "1"}
+				"max health additive bonus" {"value" "50"}
 				"maxammo grenades1 increased" {"value" "2"}
 				"reduced_healing_from_medics" {"value" "0.25"}
 			}
@@ -6922,8 +6913,8 @@ Source: https://gamebanana.com/mods/667432"
 
 			}
 			"image_inventory" "backpack/weapons/c_models/c_mrjarate"
-			//"model_player" "models/workshop/player/items/heavy/jul13_bagdolier/jul13_bagdolier.mdl"
-			"extra_wearable" "models/player/mrjarate/sniper.mdl"
+			"model_player" "models/player/mrjarate/mrjarate.mdl"
+			//"extra_wearable" "models/player/mrjarate/mrjarate.mdl"
 			"mouse_pressed_sound" "ui/item_hat_pickup.wav"
 			"drop_sound" "ui/item_hat_drop.wav"
 		}
@@ -6992,6 +6983,7 @@ Source: https://gamebanana.com/mods/670832"
 					"attribute_class"	"mult_clipsize"
 					"value"				"0.16"
 				}
+				"weapon burn time reduced" {"value" "0.4"} //this does not work, just adds the text to the weapon
                 "hidden separator" "1"
                 "damage bonus" {"value" "13"}
 				"reload time increased hidden"
@@ -7010,6 +7002,12 @@ Source: https://gamebanana.com/mods/670832"
 					"item_class"		"set_dmgtype_ignite"
 					"value"				"1"
 				}
+				"reload time increased hidden"
+				{
+					"attribute_class"	"mult_reload_time_hidden"
+					"value"	"1.5"
+				}
+				"weapon burn time reduced additive" {"value" "-6"} // this one actually reduces the afterburn duration
 			}
 			"visuals_red"
 			{
@@ -7874,8 +7872,7 @@ Source2: https://gamebanana.com/mods/651031"
 				"max health additive penalty"	{"value" "-25"}
 				"hidden separator" "1"
 				"engy sentry fire rate increased" {"value" "3.8"}
-				"engy sentry damage bonus" {"value" "3.6"}
-				"engy sentry knockback bonus" {"value" "2"}
+				"engy sentry damage bonus" {"value" "3.8"}
 			}
 			"visuals"
 			{
@@ -7919,10 +7916,10 @@ Source1: https://gamebanana.com/mods/617904"
 				"mod burstfire"
 				{
 					"attribute_class"	"mod_burstfire"
-					"value"				"2 0.25"
+					"value"				"2 0.26"
 				}
-				"spread penalty" {"value" "1.30"}
-				"deploy time increased" {"value" "1.30"}
+				"spread penalty" {"value" "1.35"}
+				"deploy time increased" {"value" "1.35"}
 			}
 			"visuals"
 			{
@@ -8122,6 +8119,7 @@ Source: https://gamebanana.com/mods/482415"
 					"value"				"models/workshop/weapons/c_models/c_quadball/w_quadball_grenade.mdl"
 				}
 				"fuse bonus" {"value" "3"}
+				"damage penalty" {"value" "0.6"}
 				"clip size penalty"
 				{
 					"attribute_class"	"mult_clipsize"
@@ -8145,9 +8143,9 @@ Source: https://gamebanana.com/mods/482415"
 					"attribute_class"	"mult_projectile_speed"
 					"value" "600"
 				}
-				"damage bonus" {"value" "10"}
+				"damage bonus" {"value" "16.6"}
 
-				"blast splash damage decreased" {"value" "1.3"}
+				"blast splash damage decreased" {"value" "1.35"}
 				"hidden secondary max ammo penalty" {"value" "0.8"}
 			}
 			"visuals"
@@ -10971,6 +10969,60 @@ Source: https://gamebanana.com/mods/482415"
 			"drop_sound"		"ui/item_wood_pole_drop.wav"
 		}
 		
+		"171"
+		{
+			"name"	"The Tribalman's Shiv"
+			"item_class"	"tf_weapon_club"
+			"item_logname"	"tribalkukri"
+			"item_iconname"	"tribalkukri"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Club"
+			"item_name"	"#TF_Unique_TribalmanKukri"
+			"item_slot"	"melee"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_wood_machete/c_wood_machete"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"45"			
+			"model_player"	"models/workshop/weapons/c_models/c_wood_machete/c_wood_machete.mdl"
+			"attach_to_hands"	"1"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"used_by_classes"
+			{
+				"sniper"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -6"				
+			}
+			"attributes"
+			{
+				"bleeding duration"
+				{
+					"attribute_class"	"bleeding_duration"
+					"value" "6"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"	"0.5"
+				}
+			}
+			"visuals"
+			{
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_wood_machete/c_wood_machete_festivizer.mdl"
+					}
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_knife_small_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
+		}
 		"1178"
 		{
 			"name"	"The Dragon's Fury"
@@ -13471,7 +13523,7 @@ Source: https://gamebanana.com/mods/482415"
 		"7047"
 		{
 			"name"	"launch to stratosphere"
-			"description_string"		"On Headshot: launch enemies to the Stratosphere"
+			"description_string"		"On 100+ damage dealt launch enemies to the Stratosphere"
 			"description_format"	"value_is_additive"
 			"hidden"	"0"
 			"effect_type"	"positive"

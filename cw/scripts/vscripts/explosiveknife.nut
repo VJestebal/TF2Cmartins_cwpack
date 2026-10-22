@@ -24,7 +24,6 @@ printl("Script started explosiveknife")
         {
             cyclecounter++
             
-            printl("Explosion countdown: " + cyclecounter)
             if (!victim.IsAlive()){
                 NetProps.SetPropString(victim,"m_iszScriptThinkFunction","")
             }
