@@ -1108,11 +1108,13 @@
 {
 	"channel"		"CHAN_WEAPON"
 	"volume"		"1.000"
-	"soundlevel"	"SNDLVL_75dB"
+	"soundlevel"	"SNDLVL_94dB"
 	"rndwave"
 	{
 			"wave"	"weapons/speedcolatheme.mp3"
 			"wave"	"weapons/doubletaptheme.mp3"
+			"wave"	"weapons/juggernog_theme.mp3"
+			"wave"	"weapons/quickrevive_theme.mp3"
 	}
 }
 
@@ -1381,5 +1383,76 @@
 	"rndwave"
 	{
 			"wave"	"weapons/wee_willy_shoot_crit.wav"
+	}
+}
+
+
+// melee deflect
+"deflect_on_swing.sound"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_94dB"
+	"rndwave"
+	{
+			"wave"	"weapons/deflect_smak.mp3"
+	}
+}
+
+// explosive arrow alternate explode sound
+"grenade_explode2.sound"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_94dB"
+	"rndwave"
+	{
+			"wave"	"weapons/grenade_explode2.wav"
+	}
+}
+
+// explosive crossbow
+
+"explosive_arrow.beep"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_74dB"
+	"rndwave"
+	{
+			"wave"	"entities/beep2.wav"
+	}
+}
+
+"explosive_crossbow.reload"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_94dB"
+	"rndwave"
+	{
+			"wave"	"weapons/siper_crossbow_reload_v2.wav"
+	}
+}
+
+"explosive_crossbow.shoot"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_94dB"
+	"rndwave"
+	{
+			"wave"	"weapons/sniper_crossbow_shoot.wav"
+	}
+}
+
+"explosive_crossbow.shoot_crit"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"		"1.000"
+	"soundlevel"	"SNDLVL_94dB"
+	"rndwave"
+	{
+			"wave"	"weapons/sniper_crossbow_shoot_crit.wav"
 	}
 }

@@ -21,12 +21,12 @@ PrecacheSound("entities/slotmachine2.mp3")
     {
         local victim = params.const_entity
         local attacker = params.attacker
-        local weapon = params.weapon
+        local inflictor = params.inflictor
         if(victim == null){return}
         if(attacker == null){return}
-        if(weapon == null){return}
+        if(inflictor == null){return}
         if(!is_player_using_correct_wrench(attacker)){return}
-        if(weapon.GetClassname() != "obj_sentrygun"){return}
+        if(inflictor.GetClassname() != "tf_projectile_sentryrocket"){return}
         params.crit_type = 1
     }
 

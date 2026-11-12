@@ -2,6 +2,8 @@ printl("Script started tf2c radio dispenser")
 
 PrecacheSound("weapons/speedcolatheme.mp3")
 PrecacheSound("weapons/doubletaptheme.mp3")
+PrecacheSound("weapons/quickrevive_theme.mp3")
+PrecacheSound("weapons/juggernog_theme.mp3")
 PrecacheModel("models/buildables/jukebox/dispenser_light.mdl")
 PrecacheModel("models/buildables/jukebox/dispenser_lvl2_light.mdl")
 PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
@@ -33,14 +35,15 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
         dispenserent.ValidateScriptScope()
         local scope = dispenserent.GetScriptScope()
         local currentmodel = 1 // 1: lvl1 building, 2: lvl1 ready, 3: lvl2 building, 4: lvl2 ready, 5: lvl3 building, 6: lvl3 ready
-        local counter = 0
+        scope.counter <- 0
+        scope.dispenserteam <- builder.GetTeam()
 
         scope.thinkradiodispenserbuff2 <- function()
         {
             local currentlvl = NetProps.GetPropInt(self, "m_iUpgradeLevel")
             local maxPlayers = MaxClients().tointeger()
             local dispenserpos = dispenserent.GetOrigin()
-            local radius = 200.0 * currentlvl;
+            local radius = 250.0 * currentlvl;
             local radiusSqr = radius * radius;
 
             for (local i = 1; i <= maxPlayers; i++)
@@ -48,6 +51,7 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
                 local player = PlayerInstanceFromIndex(i)
                 if (player == null)
                     continue
+                if (player.GetTeam() != dispenserteam) continue
                 local delta = dispenserpos - player.GetOrigin();
                 //printl("Playerdist: " + delta.LengthSqr())
                 if (delta.LengthSqr() <= radiusSqr)
@@ -57,7 +61,7 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
             }
 
             counter++
-            if(counter >= 30){
+            if(counter >= 20){
                 StopSoundOn("SpeedCola.Theme", dispenserent);
                 EmitSoundOn("SpeedCola.Theme", dispenserent);
                 counter = 0
@@ -89,7 +93,8 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
             }
 
             if(counter > 50){ // this is delayed to make sure we stay with the right model
-                NetProps.SetPropString(self, "m_iszScriptThinkFunction", "thinkradiodispenserbuff2")
+                //NetProps.SetPropString(self, "m_iszScriptThinkFunction", "thinkradiodispenserbuff2")
+                AddThinkToEnt(self, "thinkradiodispenserbuff2")
                 EmitSoundOn("SpeedCola.Theme", dispenserent);
                 counter = 0
             }
@@ -114,14 +119,15 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
         dispenserent.SetModel("models/buildables/jukebox/dispenser_lvl2_light.mdl")
         dispenserent.ValidateScriptScope()
         local scope = dispenserent.GetScriptScope()
-        local counter = 0
+        scope.counter <- 0
+        scope.dispenserteam <- builder.GetTeam()
 
         scope.thinkradiodispenserbuff <- function()
         {
             local currentlvl = NetProps.GetPropInt(self, "m_iUpgradeLevel")
             local maxPlayers = MaxClients().tointeger()
             local dispenserpos = dispenserent.GetOrigin()
-            local radius = 200.0 * currentlvl;
+            local radius = 250.0 * currentlvl;
             local radiusSqr = radius * radius;
 
             for (local i = 1; i <= maxPlayers; i++)
@@ -129,6 +135,7 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
                 local player = PlayerInstanceFromIndex(i)
                 if (player == null)
                     continue
+                if (player.GetTeam() != dispenserteam) continue
                 local delta = dispenserpos - player.GetOrigin();
                 //printl("Playerdist: " + delta.LengthSqr())
                 if (delta.LengthSqr() <= radiusSqr)
@@ -138,7 +145,7 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
             }
             counter++
 
-            if(counter >= 30){
+            if(counter >= 20){
                 StopSoundOn("SpeedCola.Theme", dispenserent);
                 EmitSoundOn("SpeedCola.Theme", dispenserent);
                 counter = 0
@@ -168,7 +175,8 @@ PrecacheModel("models/buildables/jukebox/dispenser_lvl3_light.mdl")
             }
 
             if(counter > 50){ // this is delayed to make sure we stay with the right model
-                NetProps.SetPropString(self, "m_iszScriptThinkFunction", "thinkradiodispenserbuff")
+                //NetProps.SetPropString(self, "m_iszScriptThinkFunction", "thinkradiodispenserbuff")
+                AddThinkToEnt(dispenserent, "thinkradiodispenserbuff")
                 counter = 0
             }
 

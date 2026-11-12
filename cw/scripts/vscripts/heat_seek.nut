@@ -30,8 +30,6 @@ printl("Script started heat seek")
             200.0
         );
 
-        
-
         if (rocket && rocket.GetOwner() == player)
         {
             rocket.ValidateScriptScope();
@@ -46,7 +44,7 @@ printl("Script started heat seek")
 
                 if(!owner.IsAlive()){return 0.1}
 
-                if(owner.GetActiveWeapon().GetAttribute("heat seek", 33.33) != 1){return 0.1}
+                //if(owner.GetActiveWeapon().GetAttribute("heat seek", 33.33) != 1){return 0.1}
 
                 for (local i = 1; i <= MaxClients(); i++)
                 {

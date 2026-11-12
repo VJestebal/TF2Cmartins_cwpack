@@ -17,11 +17,12 @@ printl("Script started launch")
 
         if (weapon.GetAttribute("launch to stratosphere", 33.33) != 1)
             return
-         
-        if(params.damageamount  < 100){return}
+        
+        local damage_dealt = params.damageamount
 
+        
         local vel = victim.GetAbsVelocity()
-        vel.z = 3500.0
+        vel.z = damage_dealt * 15
         victim.SetAbsVelocity(vel)
     }
 }

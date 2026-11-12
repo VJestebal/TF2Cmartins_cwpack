@@ -5,7 +5,7 @@ printl("Script started civ_stunstick")
     {
         local victim = GetPlayerFromUserID(params.userid)
         local attacker = GetPlayerFromUserID(params.attacker)
-
+        printl(params.userid)
         if (!victim || !attacker)
             return
         
