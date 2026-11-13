@@ -166,8 +166,8 @@ PrecacheSound("entities/beep2.wav")
         }
 
         // Explosion settings
-        local radius = 168.0;
-        local maxDamage = 75.0;
+        local radius = 160.0;
+        local maxDamage = 50.0;
         // Find nearby players
         local player = null;
 
@@ -193,7 +193,7 @@ PrecacheSound("entities/beep2.wav")
                 continue;
 
             // Calculate damage
-            local damage = 20 + maxDamage * (1.0 - distance / radius);
+            local damage = 30 + maxDamage * (1.0 - distance / radius);
 
             if (damage <= 0)
                 continue;

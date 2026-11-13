@@ -11,21 +11,16 @@ printl("Script started soldier_spoilsowar")
         return false
     }
 
-    function OnGameEvent_player_death(params)
+    function OnGameEvent_player_hurt(params)
     {
         local victim = GetPlayerFromUserID(params.userid)
-        local attacker = GetPlayerFromUserID(params.attacker)
 
         if (!victim)
             return
 
-        if(!victim.InCond(77))return
-        if(victim.GetCondDuration(77) < 0){
-            EntFireByHandle(victim,"RunScriptCode","self.RemoveCond(77)",5,null,null);
-            return
-        }
-
-        EntFireByHandle(victim,"RunScriptCode","soldier_spoilsowar.deghostify_function(self)",0.1,null,null);
+        if(!victim.InCond(76))return
+        if(params.health > 0)return
+        EntFireByHandle(victim,"RunScriptCode","soldier_spoilsowar.deghostify_function(self)",0.5,null,null);
 
     }
 
@@ -33,7 +28,7 @@ printl("Script started soldier_spoilsowar")
 
         if(!victim.InCond(77))return
         if(victim.GetCondDuration(77) < 0){
-            EntFireByHandle(victim,"RunScriptCode","self.RemoveCond(77)",5,null,null);
+            EntFireByHandle(victim,"RunScriptCode","self.RemoveCond(77)",3,null,null);
         }
 
     }
